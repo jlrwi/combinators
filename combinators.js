@@ -5,6 +5,10 @@
 // Resource: http://www.angelfire.com/tx4/cus/combinator/birds.html
 
 /*
+Should create documentation?
+*/
+
+/*
 Should we put in type-checking to give useful error output if function values
 aren't functions?
 */
@@ -16,13 +20,13 @@ const identity = function (a) {
 
 // K combinator
 const constant = function (a) {
-    return function (b) {
+    return function (ignore) {
         return a;
     };
 };
 
 // KI combinator
-const second = function (a) {
+const second = function (ignore) {
     return function (b) {
         return b;
     };
