@@ -56,10 +56,9 @@ const join = function (a) {
     };
 };
 
-// === compose (apply) (apply)
 // I combinator twice removed
-// Can just use identity
-/*
+// === compose (apply) (apply)
+// identity works too
 const apply2 = function (a) {
     return function (b) {
         return function (c) {
@@ -67,7 +66,6 @@ const apply2 = function (a) {
         };
     };
 };
-*/
 
 // S combinator
 const ap = function (a) {
@@ -92,6 +90,18 @@ const compose = function (a) {
     return function (b) {
         return function (c) {
             return a (b (c));
+        };
+    };
+};
+
+// B1 combinator
+// === compose (compose) (compose)
+const compose2 = function (f) {
+    return function (g) {
+        return function (x) {
+            return function (y) {
+                return f (g (x) (y));
+            };
         };
     };
 };
@@ -131,6 +141,19 @@ const converge = function (f) {
     };
 };
 
+// === compose (converge) (converge)
+const converge2 = function (f) {
+    return function (g) {
+        return function (h) {
+            return function (x) {
+                return function (y) {
+                    return f (g (x) (y)) (h (x) (y));
+                };
+            };
+        };
+    };
+};
+
 // could this be rewritten to return fs.reduce()?
 const pipeN = function (...fs) {
     const last_index = fs.length - 1;
@@ -154,9 +177,10 @@ const pipeN = function (...fs) {
 
 export {
     apply,
-//    apply2,
+    apply2,
     ap,
     compose,
+    compose2,
     pipe,
     constant,
     second,
@@ -165,6 +189,7 @@ export {
     identity,
     on,
     converge,
+    converge2,
     apply_with,
     pipeN
 };
