@@ -43,9 +43,9 @@ const apply = function (a) {
 
 // T combinator
 // === flip (apply)
-const apply_with = function (a) {
-    return function (b) {
-        return b (a);
+const apply_with = function (b) {
+    return function (a) {
+        return a (b);
     };
 };
 
