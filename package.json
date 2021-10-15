@@ -1,10 +1,14 @@
 {
   "name": "@jlrwi/combinators",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Simple combinators",
-  "main": "combinators.js",
+  "main": "combinators.min.js",
+  "files": [
+    "/src"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "stage": "extract-doc ./src/combinators.js README.md & extract-min ./src/combinators.js combinators.min.js"
   },
   "author": "Jonathan Reimer",
   "license": "ISC",
