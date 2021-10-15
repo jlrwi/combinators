@@ -4,9 +4,8 @@
 
 //MD # Combinators/p
 //MD Useful Javascript combinators/p
-//MD ##Resources:/p
-//MD [Combinator Birds]
-//MD (http://www.angelfire.com/tx4/cus/combinator/birds.html)/p
+//MD ## Resources:/p
+//MD [Combinator Birds](https://www.angelfire.com/tx4/cus/combinator/birds.html)/p
 //MD [Avaq/combinators.js](https://gist.github.com/Avaq/1f0636ec5c8d6aed2e45)/p
 
 // I combinator
